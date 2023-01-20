@@ -12,7 +12,7 @@ c) describing the scope of the system being developed or changed. The descriptio
 ## 4. Definitions
 *Any words that are used in a special way within the business or organization.*
 ## 5. Major stakeholders 
-*List the major stakeholders or the classes of stakeholders and describe how they will influence the organization and business, or can be related to the development and operation of the system. A stakeholders is an "Individual or organization having a right, share, claim, or interest in a system or in its possession of characteristics that meet their needs and expectations". *
+*List the major stakeholders or the classes of stakeholders and describe how they will influence the organization and business, or can be related to the development and operation of the system. A stakeholders is an "Individual or organization having a right, share, claim, or interest in a system or in its possession of characteristics that meet their needs and expectations".*
 # 2. References
 *List website where you found information, who you spoke to, etc.*
 # 3. Business management requirements
