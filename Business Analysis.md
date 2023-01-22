@@ -1,46 +1,92 @@
 # 1. Introduction
-*This can just be a heading.*
+This was analysis was done by Jordan Kooyman and Sheryll Jacquet.
+
 ## 1. Business purpose
-*Describe at the organization level the reason and background for which the organization is pursuing new business or changing the current business in order to fit a new management environment. In this context it should describe how the proposed system will contribute to meeting business objectives.*
+The purpose of Trade Secretes Inspections, LLC (TSI) in pursuing mold assessments is to add an additional layer of service to TSI’s service-based platform.
+
 ## 2. Business scope
-*Define the business domain under consideration by:
-a) identifying the business domain by name;
-b) defining the range of business activities included in the business domain concerned. The scope can be defined in terms of divisions in the organization and external entities that relate directly to the business activities, or functions to be performed by the business activities. It is helpful to show environmental entities that are outside of the scope;
-c) describing the scope of the system being developed or changed. The description includes assumptions on which business activities are supported by the system.*
+The business domain of TSI is residential home inspections as a service. Services include:
+*	Structural Integrity of the building(s) and structures
+*	Environmental
+*	Mold assessments
+
+Additionally, TSI works to provide standardized reports to insurance companies.
+
 ## 3. Overview
-*Describe major internal divisions and external entities of the business domain concerned and how they are interrelated. A diagrammatic description is recommended.*
+TSI has two major divisions:
+*	Trade Secrets Inspections (home inspections)
+*	Florida Mold Assessment (mold inspections)
+
 ## 4. Definitions
-*Any words that are used in a special way within the business or organization.*
+
 ## 5. Major stakeholders 
-*List the major stakeholders or the classes of stakeholders and describe how they will influence the organization and business, or can be related to the development and operation of the system. A stakeholders is an "Individual or organization having a right, share, claim, or interest in a system or in its possession of characteristics that meet their needs and expectations".*
+* Rick Kooyman – Business Owner and Operator
+* Hollie Kooyman – Website management, digital marketing, and financial management
+
+
 # 2. References
-*List website where you found information, who you spoke to, etc.*
+* Company webpage - https://collierhomeinspector.com/
+* Hollie Kooyman
+
+
 # 3. Business management requirements
-*This can just be a heading.*
+
 ## 1. Business environment
-*Define external and internal environmental factors that should be taken into consideration in understanding the new or existing business and eliciting the stakeholder requirements for the system to be developed or changed. The environmental factors should include possible influences to the business and consequently the system from external conditions like market trends, laws and regulations, social responsibilities and technology base.*
+Relevant factors include:
+*	Current and upcoming weather
+*	Insurance laws and regulations
+*	Current home-buying market
+*	Technology
+     *	Well-formatted digital reports
+     * 	Integration with analog and digital testing equipment
+     *	Timely writing and delivery of reports
+
 ## 2. Mission, goals, and objectives
-*Describe the business results to be obtained through or by the proposed system.*
+TSI needs the proposed system to enhance the mold report writing process by compiling pictures and notes into a templated document and incorporating external lab test results.
+
 ## 3. Business model
-*Describe methods by which the business mission is expected to be achieved. The description should be concentrated on the methods supported by the system to be developed or changed with the items such as product and services, geographies and locales, distribution channels, business alliance and partnership, and finance and revenue model.*
+The business mission should be achieved through the creation of software that can integrate the import process of pictures, text, and PDF documents into a text-editing application in a predefined format.
+
 ## 4. Information environment
-*Describe the overall strategy for the organization level decisions on common bases for multiple information systems. It should include the following items.
-a) project portfolio – when multiple system projects are running or planned to pursue the same business goal, the priority, relative positioning and possible constraints come from the portfolio management strategy.
-b) long term system plan – when common system infrastructure or architecture has been decided or planned, it should be described as constraints on possible design decisions.
-c) database configuration – an organization level database configuration plan and possible
-constraints on availability and accessibility of organization global data should be specified.*
+The project portfolio for this proposed project includes only this project. Long-term plans include future integration into existing home inspection report software (HomeGauge). Data should be stored independently for each customer and each report, sorted by month and year in a tree file structure.
+
+
 # 4. Business operational requirements
-*This can just be a heading.*
+
 ## 1. Business processes
-*Provide description of the procedures of business activities and possible system interfaces within the processes. The purpose of this information item is to represent how and in which context the system supports the business activities. In general, business processes make an ordered structure with decomposition and classification. Each business process should be uniquely named and numbered in the structure. The description of the individual business process should be represented as a diagram representing a sequence of activities.*
+1.	Lead Generation and Qualification
+
+     1.1.	Social Media Outreach
+
+     1.2.	Educational Resources
+
+2.	Service Performed 
+
+     2.1.	Inspection/Assessment
+
+     2.2.	Report Creation
+
+     2.3.	Report Delivery
+
+3.	Maintain Business Relations with Clients
+
 ## 2. Business operational policies and rules
-***This section is important!** The business probably has a policies and procedures manual. Find it. Include in your page any of the policies and rules related to the business operation. 
-Describe logical propositions applied in conducting the business processes. The propositions may be conditions to start, branch and terminate the sequence of the business activities in the business processes; criteria for judgment in the business processes; or formula to evaluate a quantity, which will likely be addressed in functional requirements in the SyRS and SRS. The policies and rules shall be uniquely named and numbered, and shall be referenced in the description of the business processes.*
+1.	Health and Safety
+2.	Quality 
+3.	Code of Conducts
+4.	Customers Services 
+
 ## 3. Business operational constraints
-*Describe conditions to be imposed in conducting the business process. The conditions may be on a performance constraint (e.g., the process shall be finished within a day after the triggering event occurs), or may be from a management requisite such as 'every occurrence of the process shall be monitored and recorded'.*
+*	Provide completed report within 48-hours.
+*	Client Data privacy online
+
 ## 4. Business operational modes
-*Describe methods to conduct the business operation in an unsteady state, for example, a state when business operations might be extremely busy due to some intensive occurrence of events. An unsteady state of business operation includes a manual operation mode when the proposed system is not available due to some unexpected situation like an accident or natural disaster.*
+Under extremely busy conditions, customers will be scheduled farther into the future. 
+Additionally, TSI has several methods for conducting any type of inspection, depending on conditions and available tools.
+If a client cannot access their report online, a printed copy of the report can be mailed to the client.
+
 ## 5. Business operational quality
-*Define the level of quality required for the business operation. For example, a business process may address required urgency with higher priority than the reliability of the business process.*
+TSI focuses on providing very accurate reports within 48 hours, mainly focused on reliable reporting over rapid turnaround. 
+
 ## 6. Business structure
-*Identify and describe the structures in the business relevant to the system, such as organizational structure (divisions and departments), role and responsibility structures, geographic structures and resource sharing structures. There may be a need to align the system functions to these structures and to support future structural changes.*
+Due to the size of TSI, there is no management structure. Responsibilities within the company are split by capability and availability of the two employees.
