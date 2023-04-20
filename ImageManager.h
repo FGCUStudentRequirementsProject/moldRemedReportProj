@@ -55,6 +55,7 @@ namespace ProjectPrototype {
 		/// </summary>
 		void InitializeComponent(void)
 		{
+			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(ImageManager::typeid));
 			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->button2 = (gcnew System::Windows::Forms::Button());
 			this->listView1 = (gcnew System::Windows::Forms::ListView());
@@ -73,6 +74,7 @@ namespace ProjectPrototype {
 			this->button1->TabIndex = 0;
 			this->button1->Text = L"Close";
 			this->button1->UseVisualStyleBackColor = true;
+			this->button1->Click += gcnew System::EventHandler(this, &ImageManager::button1_Click);
 			// 
 			// button2
 			// 
@@ -96,6 +98,9 @@ namespace ProjectPrototype {
 			// 
 			// pictureBox1
 			// 
+			this->pictureBox1->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.BackgroundImage")));
+			this->pictureBox1->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Zoom;
+			this->pictureBox1->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
 			this->pictureBox1->Location = System::Drawing::Point(18, 18);
 			this->pictureBox1->Margin = System::Windows::Forms::Padding(4, 5, 4, 5);
 			this->pictureBox1->Name = L"pictureBox1";
@@ -135,7 +140,7 @@ namespace ProjectPrototype {
 			this->Controls->Add(this->button2);
 			this->Controls->Add(this->button1);
 			this->Name = L"ImageManager";
-			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterParent;
+			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"ImageManager";
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
 			this->ResumeLayout(false);
@@ -145,5 +150,8 @@ namespace ProjectPrototype {
 #pragma endregion
 	private: System::Void textBox1_TextChanged(System::Object^ sender, System::EventArgs^ e) {
 	}
+private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->Hide();
+}
 };
 }

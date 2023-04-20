@@ -68,8 +68,8 @@ namespace ProjectPrototype {
 			this->changeTemplateToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->exportToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->insertImagesToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
-			this->richTextBox1 = (gcnew System::Windows::Forms::RichTextBox());
 			this->insertPDFToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->richTextBox1 = (gcnew System::Windows::Forms::RichTextBox());
 			this->menuStrip1->SuspendLayout();
 			this->SuspendLayout();
 			// 
@@ -83,7 +83,6 @@ namespace ProjectPrototype {
 			});
 			this->menuStrip1->Location = System::Drawing::Point(0, 0);
 			this->menuStrip1->Name = L"menuStrip1";
-			this->menuStrip1->Padding = System::Windows::Forms::Padding(6, 2, 0, 2);
 			this->menuStrip1->Size = System::Drawing::Size(1300, 33);
 			this->menuStrip1->TabIndex = 0;
 			this->menuStrip1->Text = L"menuStrip1";
@@ -101,26 +100,28 @@ namespace ProjectPrototype {
 			// saveToolStripMenuItem
 			// 
 			this->saveToolStripMenuItem->Name = L"saveToolStripMenuItem";
-			this->saveToolStripMenuItem->Size = System::Drawing::Size(250, 34);
+			this->saveToolStripMenuItem->Size = System::Drawing::Size(270, 34);
 			this->saveToolStripMenuItem->Text = L"Save";
 			// 
 			// saveAsToolStripMenuItem
 			// 
 			this->saveAsToolStripMenuItem->Name = L"saveAsToolStripMenuItem";
-			this->saveAsToolStripMenuItem->Size = System::Drawing::Size(250, 34);
+			this->saveAsToolStripMenuItem->Size = System::Drawing::Size(270, 34);
 			this->saveAsToolStripMenuItem->Text = L"Save As";
 			// 
 			// exitToolStripMenuItem
 			// 
 			this->exitToolStripMenuItem->Name = L"exitToolStripMenuItem";
-			this->exitToolStripMenuItem->Size = System::Drawing::Size(250, 34);
-			this->exitToolStripMenuItem->Text = L"Exit";
+			this->exitToolStripMenuItem->Size = System::Drawing::Size(270, 34);
+			this->exitToolStripMenuItem->Text = L"Home";
+			this->exitToolStripMenuItem->Click += gcnew System::EventHandler(this, &DocEditor::exitToolStripMenuItem_Click);
 			// 
 			// changeTemplateToolStripMenuItem
 			// 
 			this->changeTemplateToolStripMenuItem->Name = L"changeTemplateToolStripMenuItem";
-			this->changeTemplateToolStripMenuItem->Size = System::Drawing::Size(250, 34);
+			this->changeTemplateToolStripMenuItem->Size = System::Drawing::Size(270, 34);
 			this->changeTemplateToolStripMenuItem->Text = L"Change Template";
+			this->changeTemplateToolStripMenuItem->Click += gcnew System::EventHandler(this, &DocEditor::changeTemplateToolStripMenuItem_Click);
 			// 
 			// exportToolStripMenuItem
 			// 
@@ -133,6 +134,13 @@ namespace ProjectPrototype {
 			this->insertImagesToolStripMenuItem->Name = L"insertImagesToolStripMenuItem";
 			this->insertImagesToolStripMenuItem->Size = System::Drawing::Size(135, 29);
 			this->insertImagesToolStripMenuItem->Text = L"Insert Images";
+			this->insertImagesToolStripMenuItem->Click += gcnew System::EventHandler(this, &DocEditor::insertImagesToolStripMenuItem_Click);
+			// 
+			// insertPDFToolStripMenuItem
+			// 
+			this->insertPDFToolStripMenuItem->Name = L"insertPDFToolStripMenuItem";
+			this->insertPDFToolStripMenuItem->Size = System::Drawing::Size(109, 29);
+			this->insertPDFToolStripMenuItem->Text = L"Insert PDF";
 			// 
 			// richTextBox1
 			// 
@@ -143,23 +151,19 @@ namespace ProjectPrototype {
 			this->richTextBox1->TabIndex = 1;
 			this->richTextBox1->Text = L"";
 			// 
-			// insertPDFToolStripMenuItem
-			// 
-			this->insertPDFToolStripMenuItem->Name = L"insertPDFToolStripMenuItem";
-			this->insertPDFToolStripMenuItem->Size = System::Drawing::Size(109, 29);
-			this->insertPDFToolStripMenuItem->Text = L"Insert PDF";
-			// 
 			// DocEditor
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(9, 20);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(1300, 849);
+			this->ControlBox = false;
 			this->Controls->Add(this->richTextBox1);
 			this->Controls->Add(this->menuStrip1);
 			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->MainMenuStrip = this->menuStrip1;
 			this->Name = L"DocEditor";
-			this->Text = L"DocEditor";
+			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
+			this->Text = L"Sample Report - Document Editor";
 			this->menuStrip1->ResumeLayout(false);
 			this->menuStrip1->PerformLayout();
 			this->ResumeLayout(false);
@@ -167,5 +171,16 @@ namespace ProjectPrototype {
 
 		}
 #pragma endregion
-	};
+	private: System::Void exitToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
+		OpenWindow(Home);
+		this->Hide();
+	}
+
+private: System::Void changeTemplateToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
+	OpenWindow(TmpMan);
+}
+private: System::Void insertImagesToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
+	OpenWindow(ImgMan);
+}
+};
 }

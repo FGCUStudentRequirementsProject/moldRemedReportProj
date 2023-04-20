@@ -41,7 +41,7 @@ namespace ProjectPrototype {
 	private: System::Windows::Forms::ListView^ listView1;
 	private: System::Windows::Forms::Button^ button4;
 	private: System::Windows::Forms::Button^ button5;
-	private: System::Windows::Forms::Button^ button6;
+
 	private: System::Windows::Forms::PictureBox^ pictureBox1;
 	private: System::Windows::Forms::Label^ label1;
 
@@ -58,14 +58,12 @@ namespace ProjectPrototype {
 		/// </summary>
 		void InitializeComponent(void)
 		{
-			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(TemplateManager::typeid));
 			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->button2 = (gcnew System::Windows::Forms::Button());
 			this->button3 = (gcnew System::Windows::Forms::Button());
 			this->listView1 = (gcnew System::Windows::Forms::ListView());
 			this->button4 = (gcnew System::Windows::Forms::Button());
 			this->button5 = (gcnew System::Windows::Forms::Button());
-			this->button6 = (gcnew System::Windows::Forms::Button());
 			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
@@ -79,6 +77,7 @@ namespace ProjectPrototype {
 			this->button1->TabIndex = 0;
 			this->button1->Text = L"Import Template";
 			this->button1->UseVisualStyleBackColor = true;
+			this->button1->Click += gcnew System::EventHandler(this, &TemplateManager::button1_Click);
 			// 
 			// button2
 			// 
@@ -98,6 +97,7 @@ namespace ProjectPrototype {
 			this->button3->TabIndex = 2;
 			this->button3->Text = L"Close";
 			this->button3->UseVisualStyleBackColor = true;
+			this->button3->Click += gcnew System::EventHandler(this, &TemplateManager::button3_Click);
 			// 
 			// listView1
 			// 
@@ -116,25 +116,17 @@ namespace ProjectPrototype {
 			this->button4->TabIndex = 4;
 			this->button4->Text = L"New Template";
 			this->button4->UseVisualStyleBackColor = true;
+			this->button4->Click += gcnew System::EventHandler(this, &TemplateManager::button4_Click);
 			// 
 			// button5
 			// 
-			this->button5->Location = System::Drawing::Point(12, 688);
+			this->button5->Location = System::Drawing::Point(12, 731);
 			this->button5->Name = L"button5";
-			this->button5->Size = System::Drawing::Size(215, 35);
+			this->button5->Size = System::Drawing::Size(237, 35);
 			this->button5->TabIndex = 5;
-			this->button5->Text = L"Edit Selected Template";
+			this->button5->Text = L"Edit/Save Selected Template";
 			this->button5->UseVisualStyleBackColor = true;
 			this->button5->Click += gcnew System::EventHandler(this, &TemplateManager::button5_Click);
-			// 
-			// button6
-			// 
-			this->button6->Location = System::Drawing::Point(12, 729);
-			this->button6->Name = L"button6";
-			this->button6->Size = System::Drawing::Size(215, 35);
-			this->button6->TabIndex = 6;
-			this->button6->Text = L"Select Current Template";
-			this->button6->UseVisualStyleBackColor = true;
 			// 
 			// pictureBox1
 			// 
@@ -161,14 +153,12 @@ namespace ProjectPrototype {
 			this->ControlBox = false;
 			this->Controls->Add(this->label1);
 			this->Controls->Add(this->pictureBox1);
-			this->Controls->Add(this->button6);
 			this->Controls->Add(this->button5);
 			this->Controls->Add(this->button4);
 			this->Controls->Add(this->listView1);
 			this->Controls->Add(this->button3);
 			this->Controls->Add(this->button2);
 			this->Controls->Add(this->button1);
-			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->Name = L"TemplateManager";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"Template Manager";
@@ -178,8 +168,21 @@ namespace ProjectPrototype {
 		}
 #pragma endregion
 	private: System::Void button5_Click(System::Object^ sender, System::EventArgs^ e) {
+		System::Windows::Forms::Form^ Page = gcnew ProjectPrototype::TemplateEditor;
+		Page->Show();
 	}
 private: System::Void label1_Click(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
+
+}
+private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
+	OpenWindow(Home);
+	this->Hide();
+}
+private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e) {
+	OpenWindow(TmpEtr);
+	this->Hide();
 }
 };
 }

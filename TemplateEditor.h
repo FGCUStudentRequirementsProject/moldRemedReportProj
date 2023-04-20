@@ -52,12 +52,13 @@ namespace ProjectPrototype {
 	private: System::Windows::Forms::Label^ label2;
 	private: System::Windows::Forms::Label^ label3;
 	private: System::Windows::Forms::Label^ label4;
+	private: System::Windows::Forms::ToolStripMenuItem^ saveAndExitToolStripMenuItem;
 
 	private:
 		/// <summary>
 		/// Required designer variable.
 		/// </summary>
-		System::ComponentModel::Container ^components;
+		System::ComponentModel::Container^ components;
 
 #pragma region Windows Form Designer generated code
 		/// <summary>
@@ -72,6 +73,7 @@ namespace ProjectPrototype {
 			this->exportToolStripMenuItem1 = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->saveToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->saveAsToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->saveAndExitToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->addElementToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->insertImageBoxToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->insertTextBoxToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
@@ -105,9 +107,9 @@ namespace ProjectPrototype {
 			// 
 			// fileToolStripMenuItem
 			// 
-			this->fileToolStripMenuItem->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(3) {
+			this->fileToolStripMenuItem->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(4) {
 				this->exportToolStripMenuItem1,
-					this->saveToolStripMenuItem, this->saveAsToolStripMenuItem
+					this->saveToolStripMenuItem, this->saveAsToolStripMenuItem, this->saveAndExitToolStripMenuItem
 			});
 			this->fileToolStripMenuItem->Name = L"fileToolStripMenuItem";
 			this->fileToolStripMenuItem->Size = System::Drawing::Size(54, 29);
@@ -116,20 +118,26 @@ namespace ProjectPrototype {
 			// exportToolStripMenuItem1
 			// 
 			this->exportToolStripMenuItem1->Name = L"exportToolStripMenuItem1";
-			this->exportToolStripMenuItem1->Size = System::Drawing::Size(176, 34);
+			this->exportToolStripMenuItem1->Size = System::Drawing::Size(270, 34);
 			this->exportToolStripMenuItem1->Text = L"Export";
 			// 
 			// saveToolStripMenuItem
 			// 
 			this->saveToolStripMenuItem->Name = L"saveToolStripMenuItem";
-			this->saveToolStripMenuItem->Size = System::Drawing::Size(176, 34);
+			this->saveToolStripMenuItem->Size = System::Drawing::Size(270, 34);
 			this->saveToolStripMenuItem->Text = L"Save";
 			// 
 			// saveAsToolStripMenuItem
 			// 
 			this->saveAsToolStripMenuItem->Name = L"saveAsToolStripMenuItem";
-			this->saveAsToolStripMenuItem->Size = System::Drawing::Size(176, 34);
+			this->saveAsToolStripMenuItem->Size = System::Drawing::Size(270, 34);
 			this->saveAsToolStripMenuItem->Text = L"Save As";
+			// 
+			// saveAndExitToolStripMenuItem
+			// 
+			this->saveAndExitToolStripMenuItem->Name = L"saveAndExitToolStripMenuItem";
+			this->saveAndExitToolStripMenuItem->Size = System::Drawing::Size(270, 34);
+			this->saveAndExitToolStripMenuItem->Text = L"Save and Exit";
 			// 
 			// addElementToolStripMenuItem
 			// 
@@ -168,14 +176,12 @@ namespace ProjectPrototype {
 			// 
 			// toolStripComboBox1
 			// 
-			this->toolStripComboBox1->Font = (gcnew System::Drawing::Font(L"Segoe UI", 9));
 			this->toolStripComboBox1->Name = L"toolStripComboBox1";
 			this->toolStripComboBox1->Size = System::Drawing::Size(121, 34);
 			this->toolStripComboBox1->Text = L"Font";
 			// 
 			// toolStripComboBox2
 			// 
-			this->toolStripComboBox2->Font = (gcnew System::Drawing::Font(L"Segoe UI", 9));
 			this->toolStripComboBox2->Name = L"toolStripComboBox2";
 			this->toolStripComboBox2->Size = System::Drawing::Size(121, 34);
 			this->toolStripComboBox2->Text = L"Size";

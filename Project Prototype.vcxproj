@@ -121,11 +121,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="DocEditor.cpp" />
-    <ClCompile Include="ImageManager.cpp" />
     <ClCompile Include="MainForm.cpp" />
-    <ClCompile Include="Template Editor.cpp" />
-    <ClCompile Include="Template Manager.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DocEditor.h">
@@ -137,10 +133,10 @@
     <ClInclude Include="MainForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
-    <ClInclude Include="Template Editor.h">
+    <ClInclude Include="Template Manager.h">
       <FileType>CppForm</FileType>
     </ClInclude>
-    <ClInclude Include="Template Manager.h">
+    <ClInclude Include="TemplateEditor1.h">
       <FileType>CppForm</FileType>
     </ClInclude>
   </ItemGroup>
@@ -154,12 +150,17 @@
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.h</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Template Editor.resx">
-      <DependentUpon>Template Editor.h</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Template Manager.resx">
       <DependentUpon>Template Manager.h</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="TemplateEditor1.resx">
+      <DependentUpon>TemplateEditor1.h</DependentUpon>
+      <LogicalName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">ProjectPrototype.TemplateEditor.resources</LogicalName>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="crop-Trade-Secrets-Inspections-LOGO.ico" />
+    <Image Include="crop-Trade-Secrets-Inspections-LOGO.png" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -56,7 +56,8 @@ namespace ProjectPrototype {
 
 
 	private: System::Windows::Forms::TextBox^ search_template_bar;
-	private: System::Windows::Forms::Button^ Search;
+	private: System::Windows::Forms::Button^ SearchTemplatesButton;
+
 
 	private: System::Windows::Forms::ListView^ Recent_File_View;
 
@@ -67,10 +68,11 @@ namespace ProjectPrototype {
 	private: System::Windows::Forms::ColumnHeader^ File_Type_Header;
 	private: System::Windows::Forms::ColumnHeader^ Date_Header;
 	private: System::Windows::Forms::Label^ Recent_File_Header;
-	private: System::Windows::Forms::ToolStripMenuItem^ browseToolStripMenuItem;
-	private: System::Windows::Forms::ToolStripMenuItem^ openToolStripMenuItem;
+
+
 
 	private: System::Windows::Forms::ListView^ search_template_list;
+	private: System::Windows::Forms::ToolStripMenuItem^ exitToolStripMenuItem;
 
 
 
@@ -94,22 +96,20 @@ namespace ProjectPrototype {
 		/// </summary>
 		void InitializeComponent(void)
 		{
-			System::Windows::Forms::ListViewItem^ listViewItem1 = (gcnew System::Windows::Forms::ListViewItem(gcnew cli::array< System::String^  >(1) { L"Report- Lily Jacobs" },
+			System::Windows::Forms::ListViewItem^ listViewItem1 = (gcnew System::Windows::Forms::ListViewItem(gcnew cli::array< System::String^  >(1) { L"Report - Lily Jacobs (Sample)" },
 				-1, System::Drawing::Color::Empty, System::Drawing::Color::Empty, (gcnew System::Drawing::Font(L"Segoe UI", 7.8F, System::Drawing::FontStyle::Regular,
 					System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)))));
-			System::Windows::Forms::ListViewItem^ listViewItem2 = (gcnew System::Windows::Forms::ListViewItem(L"Form_Template "));
 			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(MainForm::typeid));
 			this->menuStrip2 = (gcnew System::Windows::Forms::MenuStrip());
 			this->homeToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->recentFilesToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
-			this->browseToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->newToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->exitToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->uploadToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
-			this->openToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->exportToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->openFileDialog1 = (gcnew System::Windows::Forms::OpenFileDialog());
 			this->search_template_bar = (gcnew System::Windows::Forms::TextBox());
-			this->Search = (gcnew System::Windows::Forms::Button());
+			this->SearchTemplatesButton = (gcnew System::Windows::Forms::Button());
 			this->Recent_File_View = (gcnew System::Windows::Forms::ListView());
 			this->Name_Header = (gcnew System::Windows::Forms::ColumnHeader());
 			this->File_Type_Header = (gcnew System::Windows::Forms::ColumnHeader());
@@ -121,6 +121,7 @@ namespace ProjectPrototype {
 			// 
 			// menuStrip2
 			// 
+			this->menuStrip2->GripMargin = System::Windows::Forms::Padding(2, 2, 0, 2);
 			this->menuStrip2->ImageScalingSize = System::Drawing::Size(20, 20);
 			this->menuStrip2->Items->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(3) {
 				this->homeToolStripMenuItem,
@@ -128,62 +129,54 @@ namespace ProjectPrototype {
 			});
 			this->menuStrip2->Location = System::Drawing::Point(0, 0);
 			this->menuStrip2->Name = L"menuStrip2";
-			this->menuStrip2->Padding = System::Windows::Forms::Padding(5, 1, 0, 1);
-			this->menuStrip2->Size = System::Drawing::Size(888, 24);
+			this->menuStrip2->Padding = System::Windows::Forms::Padding(8, 2, 0, 2);
+			this->menuStrip2->Size = System::Drawing::Size(1332, 33);
 			this->menuStrip2->TabIndex = 1;
 			this->menuStrip2->Text = L"F";
 			this->menuStrip2->ItemClicked += gcnew System::Windows::Forms::ToolStripItemClickedEventHandler(this, &MainForm::menuStrip2_ItemClicked);
 			// 
 			// homeToolStripMenuItem
 			// 
-			this->homeToolStripMenuItem->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(2) {
+			this->homeToolStripMenuItem->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(3) {
 				this->recentFilesToolStripMenuItem,
-					this->newToolStripMenuItem
+					this->newToolStripMenuItem, this->exitToolStripMenuItem
 			});
 			this->homeToolStripMenuItem->Name = L"homeToolStripMenuItem";
-			this->homeToolStripMenuItem->Size = System::Drawing::Size(52, 22);
+			this->homeToolStripMenuItem->Size = System::Drawing::Size(77, 29);
 			this->homeToolStripMenuItem->Text = L"Home";
 			this->homeToolStripMenuItem->Click += gcnew System::EventHandler(this, &MainForm::homeToolStripMenuItem_Click);
 			// 
 			// recentFilesToolStripMenuItem
 			// 
-			this->recentFilesToolStripMenuItem->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(1) { this->browseToolStripMenuItem });
 			this->recentFilesToolStripMenuItem->Name = L"recentFilesToolStripMenuItem";
-			this->recentFilesToolStripMenuItem->Size = System::Drawing::Size(136, 22);
+			this->recentFilesToolStripMenuItem->Size = System::Drawing::Size(270, 34);
 			this->recentFilesToolStripMenuItem->Text = L"Recent Files";
-			// 
-			// browseToolStripMenuItem
-			// 
-			this->browseToolStripMenuItem->Name = L"browseToolStripMenuItem";
-			this->browseToolStripMenuItem->ShortcutKeys = static_cast<System::Windows::Forms::Keys>((System::Windows::Forms::Keys::Control | System::Windows::Forms::Keys::O));
-			this->browseToolStripMenuItem->Size = System::Drawing::Size(155, 22);
-			this->browseToolStripMenuItem->Text = L"Browse";
-			this->browseToolStripMenuItem->Click += gcnew System::EventHandler(this, &MainForm::browseToolStripMenuItem_Click);
 			// 
 			// newToolStripMenuItem
 			// 
 			this->newToolStripMenuItem->Name = L"newToolStripMenuItem";
-			this->newToolStripMenuItem->Size = System::Drawing::Size(136, 22);
+			this->newToolStripMenuItem->Size = System::Drawing::Size(270, 34);
 			this->newToolStripMenuItem->Text = L"New";
+			this->newToolStripMenuItem->Click += gcnew System::EventHandler(this, &MainForm::newToolStripMenuItem_Click);
+			// 
+			// exitToolStripMenuItem
+			// 
+			this->exitToolStripMenuItem->Name = L"exitToolStripMenuItem";
+			this->exitToolStripMenuItem->Size = System::Drawing::Size(270, 34);
+			this->exitToolStripMenuItem->Text = L"Exit";
+			this->exitToolStripMenuItem->Click += gcnew System::EventHandler(this, &MainForm::exitToolStripMenuItem_Click);
 			// 
 			// uploadToolStripMenuItem
 			// 
-			this->uploadToolStripMenuItem->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(1) { this->openToolStripMenuItem });
 			this->uploadToolStripMenuItem->Name = L"uploadToolStripMenuItem";
-			this->uploadToolStripMenuItem->Size = System::Drawing::Size(57, 22);
-			this->uploadToolStripMenuItem->Text = L"Upload";
+			this->uploadToolStripMenuItem->Size = System::Drawing::Size(159, 29);
+			this->uploadToolStripMenuItem->Text = L"Import Template";
 			this->uploadToolStripMenuItem->Click += gcnew System::EventHandler(this, &MainForm::uploadToolStripMenuItem_Click);
-			// 
-			// openToolStripMenuItem
-			// 
-			this->openToolStripMenuItem->Name = L"openToolStripMenuItem";
-			this->openToolStripMenuItem->Size = System::Drawing::Size(103, 22);
-			this->openToolStripMenuItem->Text = L"Open";
 			// 
 			// exportToolStripMenuItem
 			// 
 			this->exportToolStripMenuItem->Name = L"exportToolStripMenuItem";
-			this->exportToolStripMenuItem->Size = System::Drawing::Size(53, 22);
+			this->exportToolStripMenuItem->Size = System::Drawing::Size(79, 29);
 			this->exportToolStripMenuItem->Text = L"Export";
 			// 
 			// openFileDialog1
@@ -194,26 +187,26 @@ namespace ProjectPrototype {
 			// search_template_bar
 			// 
 			this->search_template_bar->Font = (gcnew System::Drawing::Font(L"Segoe UI", 7.8F));
-			this->search_template_bar->Location = System::Drawing::Point(147, 25);
-			this->search_template_bar->Margin = System::Windows::Forms::Padding(2, 3, 2, 3);
+			this->search_template_bar->Location = System::Drawing::Point(220, 38);
+			this->search_template_bar->Margin = System::Windows::Forms::Padding(3, 5, 3, 5);
 			this->search_template_bar->Multiline = true;
 			this->search_template_bar->Name = L"search_template_bar";
-			this->search_template_bar->Size = System::Drawing::Size(599, 18);
+			this->search_template_bar->Size = System::Drawing::Size(896, 26);
 			this->search_template_bar->TabIndex = 2;
 			this->search_template_bar->Text = L"Search";
 			this->search_template_bar->TextChanged += gcnew System::EventHandler(this, &MainForm::textBox1_TextChanged);
 			// 
-			// Search
+			// SearchTemplatesButton
 			// 
-			this->Search->Font = (gcnew System::Drawing::Font(L"Segoe UI", 7.8F));
-			this->Search->Location = System::Drawing::Point(748, 20);
-			this->Search->Margin = System::Windows::Forms::Padding(2, 3, 2, 3);
-			this->Search->Name = L"Search";
-			this->Search->Size = System::Drawing::Size(70, 23);
-			this->Search->TabIndex = 3;
-			this->Search->Text = L"Search Template Button";
-			this->Search->UseVisualStyleBackColor = true;
-			this->Search->Click += gcnew System::EventHandler(this, &MainForm::button1_Click);
+			this->SearchTemplatesButton->Font = (gcnew System::Drawing::Font(L"Segoe UI", 7.8F));
+			this->SearchTemplatesButton->Location = System::Drawing::Point(1122, 31);
+			this->SearchTemplatesButton->Margin = System::Windows::Forms::Padding(3, 5, 3, 5);
+			this->SearchTemplatesButton->Name = L"SearchTemplatesButton";
+			this->SearchTemplatesButton->Size = System::Drawing::Size(105, 35);
+			this->SearchTemplatesButton->TabIndex = 3;
+			this->SearchTemplatesButton->Text = L"Search";
+			this->SearchTemplatesButton->UseVisualStyleBackColor = true;
+			this->SearchTemplatesButton->Click += gcnew System::EventHandler(this, &MainForm::button1_Click);
 			// 
 			// Recent_File_View
 			// 
@@ -227,17 +220,18 @@ namespace ProjectPrototype {
 			this->Recent_File_View->HideSelection = false;
 			this->Recent_File_View->HoverSelection = true;
 			this->Recent_File_View->ImeMode = System::Windows::Forms::ImeMode::NoControl;
-			this->Recent_File_View->Items->AddRange(gcnew cli::array< System::Windows::Forms::ListViewItem^  >(2) { listViewItem1, listViewItem2 });
+			this->Recent_File_View->Items->AddRange(gcnew cli::array< System::Windows::Forms::ListViewItem^  >(1) { listViewItem1 });
 			this->Recent_File_View->LabelEdit = true;
-			this->Recent_File_View->Location = System::Drawing::Point(147, 276);
-			this->Recent_File_View->Margin = System::Windows::Forms::Padding(2, 3, 2, 3);
+			this->Recent_File_View->Location = System::Drawing::Point(220, 425);
+			this->Recent_File_View->Margin = System::Windows::Forms::Padding(3, 5, 3, 5);
 			this->Recent_File_View->Name = L"Recent_File_View";
 			this->Recent_File_View->RightToLeft = System::Windows::Forms::RightToLeft::No;
-			this->Recent_File_View->Size = System::Drawing::Size(599, 256);
+			this->Recent_File_View->Size = System::Drawing::Size(896, 392);
 			this->Recent_File_View->TabIndex = 4;
 			this->Recent_File_View->UseCompatibleStateImageBehavior = false;
 			this->Recent_File_View->View = System::Windows::Forms::View::Details;
 			this->Recent_File_View->SelectedIndexChanged += gcnew System::EventHandler(this, &MainForm::Recent_File_View_SelectedIndexChanged);
+			this->Recent_File_View->MouseDoubleClick += gcnew System::Windows::Forms::MouseEventHandler(this, &MainForm::Recent_File_View_MouseDoubleClick);
 			// 
 			// Name_Header
 			// 
@@ -259,10 +253,9 @@ namespace ProjectPrototype {
 			// 
 			this->Recent_File_Header->AutoSize = true;
 			this->Recent_File_Header->Font = (gcnew System::Drawing::Font(L"Segoe UI", 13.8F));
-			this->Recent_File_Header->Location = System::Drawing::Point(142, 248);
-			this->Recent_File_Header->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->Recent_File_Header->Location = System::Drawing::Point(213, 382);
 			this->Recent_File_Header->Name = L"Recent_File_Header";
-			this->Recent_File_Header->Size = System::Drawing::Size(110, 25);
+			this->Recent_File_Header->Size = System::Drawing::Size(164, 38);
 			this->Recent_File_Header->TabIndex = 5;
 			this->Recent_File_Header->Text = L"Recent Files";
 			this->Recent_File_Header->Click += gcnew System::EventHandler(this, &MainForm::label1_Click);
@@ -272,27 +265,29 @@ namespace ProjectPrototype {
 			this->search_template_list->Font = (gcnew System::Drawing::Font(L"Segoe UI", 7.8F));
 			this->search_template_list->FullRowSelect = true;
 			this->search_template_list->HideSelection = false;
-			this->search_template_list->Location = System::Drawing::Point(147, 45);
-			this->search_template_list->Margin = System::Windows::Forms::Padding(2, 3, 2, 3);
+			this->search_template_list->Location = System::Drawing::Point(220, 69);
+			this->search_template_list->Margin = System::Windows::Forms::Padding(3, 5, 3, 5);
 			this->search_template_list->Name = L"search_template_list";
-			this->search_template_list->Size = System::Drawing::Size(598, 133);
+			this->search_template_list->Size = System::Drawing::Size(895, 202);
 			this->search_template_list->TabIndex = 6;
 			this->search_template_list->UseCompatibleStateImageBehavior = false;
 			// 
 			// MainForm
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
+			this->AutoScaleDimensions = System::Drawing::SizeF(9, 20);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(888, 530);
+			this->ClientSize = System::Drawing::Size(1332, 815);
+			this->ControlBox = false;
 			this->Controls->Add(this->search_template_list);
 			this->Controls->Add(this->Recent_File_Header);
 			this->Controls->Add(this->Recent_File_View);
-			this->Controls->Add(this->Search);
+			this->Controls->Add(this->SearchTemplatesButton);
 			this->Controls->Add(this->search_template_bar);
 			this->Controls->Add(this->menuStrip2);
 			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
-			this->Margin = System::Windows::Forms::Padding(2, 1, 2, 1);
+			this->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->Name = L"MainForm";
+			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"TSI Document/Template Editor";
 			this->Load += gcnew System::EventHandler(this, &MainForm::MainForm_Load);
 			this->menuStrip2->ResumeLayout(false);
@@ -316,6 +311,8 @@ private: System::Void openFileDialog1_FileOk(System::Object^ sender, System::Com
 }
 
 private: System::Void uploadToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
+	OpenWindow(TmpMan);
+	this->Hide();
 }
 private: System::Void reportToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
 }
@@ -336,6 +333,17 @@ private: System::Void Recent_File_View_SelectedIndexChanged(System::Object^ send
 private: System::Void browseToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
 }
 private: System::Void MainForm_Load(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void exitToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
+	CloseWindows();
+}
+private: System::Void newToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
+	OpenWindow(DocEtr);
+	this->Hide();
+}
+private: System::Void Recent_File_View_MouseDoubleClick(System::Object^ sender, System::Windows::Forms::MouseEventArgs^ e) {
+	OpenWindow(DocEtr);
+	this->Hide();
 }
 };
 }
